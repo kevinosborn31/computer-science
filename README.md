@@ -1,1 +1,1 @@
-# computer-science
+# Documenting my computer science study and my solutions to practice problems
