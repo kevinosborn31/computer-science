@@ -1,1 +1,1 @@
-# Documenting my computer science study and my solutions to practice problems
+# Documenting my solutions to common coding problems
