@@ -1,20 +1,28 @@
 const findTheLongestSubstring = (s) => {
-    const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
-    let maxLength = 0;
+  const vowelIndices = new Map([
+    ["a", 1 << 0],
+    ["e", 1 << 1],
+    ["i", 1 << 2],
+    ["o", 1 << 3],
+    ["u", 1 << 4],
+  ]);
 
-    for (let start = 0; start < s.length; start++) {
-        const frequency = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+  let maxLength = 0;
+  let bitmask = 0;
+  const map = new Map();
+  map.set(0, -1);
 
-        for (let end = start; end < s.length; end++) {
-            if (vowels.has(s[end])) {
-                frequency[s[end]]++;
-            }
-
-            if (Object.values(frequency).every(count => count % 2 === 0)) {
-                maxLength = Math.max(maxLength, end - start + 1);
-            }
-        }
+  for (let i = 0; i < s.length; i++) {
+    if (vowelIndices.has(s[i])) {
+      bitmask ^= vowelIndices.get(s[i]);
     }
 
-    return maxLength;
-}
+    if (map.has(bitmask)) {
+      maxLength = Math.max(maxLength, i - map.get(bitmask));
+    } else {
+      map.set(bitmask, i);
+    }
+  }
+
+  return maxLength;
+};
