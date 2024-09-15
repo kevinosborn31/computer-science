@@ -1,5 +1,5 @@
 const findTheLongestSubstring = (s) => {
-    const vowels = new Set('a', 'e', 'i', 'o', 'u');
+    const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
     let maxLength = 0;
 
     for (let start = 0; start < s.length; start++) {
