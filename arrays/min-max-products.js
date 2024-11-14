@@ -1,0 +1,3 @@
+const minimizedMaximum = (n, quantities) => {
+    
+};
