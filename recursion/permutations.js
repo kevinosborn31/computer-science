@@ -4,7 +4,7 @@ const getPermutations = (array) => {
     return permutations;
 }
 
-const permutationsHelper(array, currentPermutation, permutations) {
+const permutationsHelper = (array, currentPermutation, permutations) => {
     if (!array.length && currentPermutation.length) {
         permutations.push(currentPermutation);
       } else {
