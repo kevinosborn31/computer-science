@@ -15,7 +15,7 @@ class LinkedList {
     return curr;
   }
   
-  function middleNode(linkedList) {
+  const middleNode = (linkedList) => {
     let curr = linkedList;
     let length = 0;
   
